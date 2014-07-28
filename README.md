@@ -1,0 +1,4 @@
+FlexsliderMania
+===============
+
+Custom Flexslider
