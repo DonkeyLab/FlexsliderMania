@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 	=Reset + =Normalize
 */
@@ -508,4 +508,11 @@ html[xmlns] .c-lst {
 /* line 60, ../sass/_objects/_carousel.scss */
 .no-js .c-lst > li:first-child {
   display: block;
+}
+
+.loading-square-circle {
+  background: url(img/loader_sc.gif) no-repeat 50% 50%;
+  min-height: 31px;
+  height: auto !important;
+  height: 31px;
 }
