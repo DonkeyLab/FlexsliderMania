@@ -1,0 +1,114 @@
+/*
+	=form
+*/
+form,
+fieldset { 
+	@include zero;
+	border: 0;
+}
+fieldset legend {
+	display: inline-block;
+	padding: 0 0 5px
+}
+fieldset fieldset legend {
+	background: transparent;
+	color: inhrent;
+	padding: 0 0 5px;
+}
+legend {
+    border: 0;
+    white-space: normal;
+    *margin-left: -7px;
+}
+button,
+input,
+select,
+textarea {
+	font-weight: normal;
+	font-style: normal;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+	@include vendor(box-sizing, border-box);
+}
+textarea {
+    overflow: auto; 
+    vertical-align: top;
+}
+button {
+	background-color: transparent;
+	width: auto; overflow: visible;
+	display: block;
+	margin: 0; padding: 0;
+	border: 0;
+	cursor: pointer;
+	vertical-align: middle;
+}
+button span {
+	text-align: center;
+	overflow: visible;
+	height: 1%;
+	display: block;
+	white-space: nowrap;
+	margin: 0;
+}
+button::-moz-focus-inner { 
+    border: 0;
+    padding: 0;
+}
+button,
+input {
+    line-height: normal;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+    *overflow: visible;
+}
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+select { width: auto; }
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: bottom;
+	width: 15px; height: 20px;
+	float: left; 
+	position: relative;
+	margin: 0; padding: 0;
+	@include box-inline;
+}
+/*
+	=label
+*/
+label[for]{ cursor: pointer; }
+
+/*
+	=test
+*/
+form {
+	border: 5px solid #f00;
+}

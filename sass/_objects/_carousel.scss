@@ -1,0 +1,60 @@
+.c {
+	@include pos;
+}
+
+.c-lst-container {
+	text-align: center;
+
+	.flex-direction-nav {
+		margin: 0; padding: 0;
+		
+		li {
+			margin: 0;
+			list-style: none;
+		}
+		.flex-next {
+			right: $gutterwidth;
+		}
+		.flex-prev {
+			left: $gutterwidth;
+		}
+		a {
+			background-image: url(img/slider/icons_slider_nxt_prv.png);
+			width: 36px; height: 36px;
+		}
+	}
+	.flex-control-nav {
+		background-image: url(img/bk/bianco_80.png);
+		//@include box-inline;
+		@include pos(static);
+		width: auto;
+		padding: 0 $gutterwidth * 2;
+		//bottom: 40px;
+	}
+	.flex-control-paging {
+
+		li {
+			padding-top: 0;
+
+			a {
+				background-color: $color-7;
+				line-height: 10px;
+			}
+			a:hover,
+			a.flex-active {
+				background-color: $color-6;
+			}
+		}
+	}
+	.ie7 & {}
+}
+
+/* Clearfix for the .c-lst element */
+.c-lst:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .c-lst {display: block;} 
+* html .c-lst {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .c-lst > li:first-child {display: block;}

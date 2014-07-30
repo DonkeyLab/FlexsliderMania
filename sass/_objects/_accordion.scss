@@ -1,0 +1,44 @@
+@if $accordion-mode == true{
+  .is-accordion {
+  	.accordion-hd {
+  	}
+  	.accordion-content {
+  	}
+  	.accordion-hd.active {
+  	}
+  }
+  .accordion-hd {
+    @include pos;
+    cursor: pointer;
+    outline: 0;
+  }
+  .accordion-control {
+    background: $linkcolor url(img/sprites_accordion.png) no-repeat 0 0;
+    text-indent: -9999em;
+    @include pos(absolute,2);
+    right: 0; top: 0;
+    cursor: pointer;
+    width: 15px; height: 15px;
+    display: block;
+
+    .active & {
+      background-position: 0 -15px;
+    }
+  }
+  .accordion-content { 
+    overflow: hidden;
+    float: none;
+    display: block;
+  }
+  .js .accordion-content {
+    max-height: 0;
+    -webkit-transition: max-height 0.3s ease-out;
+    -moz-transition: max-height 0.3s ease-out;
+    -ms-transition: max-height 0.3s ease-out;
+    -o-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
+  }
+  .js .accordion-content.active {
+    max-height: none;
+  }
+}//fine accordion-mode

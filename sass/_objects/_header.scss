@@ -1,0 +1,27 @@
+@if $header-mode == true{
+/*
+	=masthead
+*/
+
+.site-masthead {
+}
+
+.site-brand {
+	margin: 0 0 $base-spacing-unit / 2;
+}
+
+.search-form {
+	@include pos;
+	
+	.text-input {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+.l-nav-user {
+	margin-bottom: $base-spacing-unit / 2;
+}
+
+}//fine header-mode
+
+

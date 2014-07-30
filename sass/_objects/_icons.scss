@@ -1,0 +1,23 @@
+.stelle {
+	background: url(img/stelle.png) no-repeat 0 0;
+	width: 125px;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -9999em;
+	margin: 0 0 10px;
+}
+.stelle-5 {
+	background-position: 0 0;
+}
+.stelle-4 {
+	background-position: 0 -21px;
+}
+.stelle-3 {
+	background-position: 0 -42px;
+}
+.stelle-2 {
+	background-position: 0 -63px;
+}
+.stelle-1 {
+	background-position: 0 -84px;
+}

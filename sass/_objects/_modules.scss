@@ -1,0 +1,11 @@
+@if $widget-mode == true{
+
+/*
+	=mod
+*/
+.mod {
+	@extend .cf;
+	
+	margin-bottom: $base-spacing-unit;
+}
+}//fine widget-mode

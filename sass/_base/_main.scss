@@ -1,0 +1,13 @@
+/*
+	=main
+*/
+html{
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $basefontfamily;
+    overflow-y: scroll;
+    min-height: 100%;
+}
+body {
+	font-family: $basefontfamily;
+	font-size: 100%;
+	line-height: ($base-line-height / $base-font-size)*1em;
+}

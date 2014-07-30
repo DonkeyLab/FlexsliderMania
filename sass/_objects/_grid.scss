@@ -1,0 +1,27 @@
+@if $grid-mode == true{
+/*
+    =grid
+*/
+.grid {
+    width: 100%;
+    //margin-left: -$base-spacing-unit;
+    list-style: none;
+    margin-bottom: 0;
+    @extend .cf;
+}
+.grid > .grid {
+    margin-left: 0;
+}
+/* =grid__item */
+//BEM scrittura
+.grid__item,
+.col {
+    display: block; float: left;
+    width: 100%;
+    //padding-left: $base-spacing-unit;
+    vertical-align: top;
+    //@if $global-border-box == false{
+    @include vendor(box-sizing, border-box);
+    //}
+}
+}//fine grid-mode

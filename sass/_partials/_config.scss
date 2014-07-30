@@ -1,0 +1,130 @@
+$debug-mode:        false!default;
+$font-test-mode:    false!default;
+$page-test-mode:	false!default;
+
+$typo-mode:			false!default;
+$form-mode:			false!default;
+
+//layout
+$grid-mode:			false!default;
+$header-mode:		false!default;
+$footer-mode:		false!default;
+$structure-mode:	false!default;
+
+$navigation-mode:   false!default;
+
+$media-mode:      	false!default;
+$list-mode:      	false!default;
+$widget-mode:  		false!default;//module
+
+$article-mode:      false!default;
+
+$pagination-mode:	false!default;
+$accordion-mode:    false!default;
+$carousel-mode:     true!default;
+$rating-mode:  		false!default;
+$tabs-mode:      	false!default;
+$tooltip-mode:      false!default;
+$gallery-mode:      false!default;
+
+$adv-mode:     		false!default;
+$msg-mode:     		false!default;
+$theme-mode:     	false!default;
+
+$base-font-size:    13px!default;
+$base-line-height:  20px!default;
+$base-font-family:  sans-serif!default;
+
+$base-color:     	#666666!default;
+
+$giga-size:         96px!default;
+$mega-size:         72px!default;
+$kilo-size:         48px!default;
+$h1-size:           36px!default; // .alpha
+$h2-size:           30px!default; // .beta
+$h3-size:           24px!default; // .gamma
+$h4-size:           20px!default; // .delta
+$h5-size:           16px!default; // .epsilon
+$h6-size:           14px!default; // .zeta
+$milli-size:        12px!default;
+$micro-size:        10px!default;
+
+$basefontfamily:  "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Arial, ​Helvetica, ​sans-serif;
+$headfontfamily:  "HelveticaNeueLT", Helvetica, Arial, sans-serif;
+$otherfontfamily: "Roboto Condensed", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Arial, sans-serif;
+//"Roboto Condensed", 
+$font-3: "Helvetica Neue", Helvetica, "Lucida Grande","Lucida Sans Unicode","Lucida Sans", Arial, "Lucida Grande", sans-serif;
+$font-1: 'Open Sans Condensed', "Helvetica Neue", Helvetica, sans-serif; //http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans+Condensed
+$font-2: "Adobe Garamond Pro",Garamond,Palatino,"Palatino Linotype",Times,"Times New Roman",Georgia,serif;
+
+$maxwidth: 964px;
+$gutterwidth: 10px;
+
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+$XS: 288px;
+$S: 480px;
+$M: 688px;
+$L: 860px;
+$XL: $maxwidth;
+
+// You can choose a special typeface just for ampersands too
+$ampfontfamily: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+
+//  And if your site’s for geeks, you’ll need a font for code too
+$codefont: Monaco, Courier New, monospace;
+
+$bodycolor: 		#000;
+$textcolor: 		#333;
+
+$color-1: 	#595959; //grigio scuro
+$color-2: 	#bad405; //verde brillante
+$color-3: 	#00b0f0; //blu blog
+$color-4: 	#eee; //grigio chiaro #e6e6e6
+$color-5: 	#6CA024; //verde scuro
+
+$color-6: 	#0cb4f2;// blu elettrico
+$color-61: 	#0cafed;// blu elettrico titoli box
+$color-61: 	#5ed3fe;// blu elettrico titoli box footer
+$color-7: 	#00506c; //blu scuro footer
+$color-8: 	#013345; //verde scuro; label cerca
+$color-9: 	#737373; //grigio scuro
+$color-91:	#eaeaea; //grigio chiaro
+
+
+$tg-documentale-color: 	#E78C8C; //verde - gestione documentale
+$tg-marketing-color: 	#E2AE71; //Direct &amp; Digital Marketing
+$tg-eprocurement-color: #829FB5; //E-procurement
+
+
+$headingtextcolor: 	$color-1;
+$labeltextcolor: 	$color-1;
+$btn-color: 		$color-4;
+$btn-text-color: 	$bodycolor;
+$primarycolor: 		$color-3;
+
+$headlinkcolor:  	#000;
+
+$footer-textcolor: 	#999;
+$footer-linkcolor: 	#fff;
+
+$linkcolor:  		$color-7;
+$linkcolorhover:	#467407;
+$linkcolorvisited:	$linkcolor;//darken($linkcolorhover, 10);
+$linkcolorfocus:	$linkcolorhover;//darken($linkcolorvisited, 10);
+$linkcoloractive:	$linkcolorhover;
+
+$brand-color:       #c3c400!default;
+$brand-face:        "Helvetica Neue", Arial, sans-serif!default;
+$brand-round:        4px!default;
+
+$global-border-box: false!default;
+$base-border-color: #cccccc; //#ddd;
+
+
+$icon_social_size: 32px;
+$icon_social_size_offset: (-$icon_social_size);
+
+$social_channels: "twitter", "facebook", "googleplus", "youtube", "linkedin";

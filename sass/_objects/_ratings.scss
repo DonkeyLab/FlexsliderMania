@@ -1,0 +1,42 @@
+@if $rating-mode == true{
+/* 
+	=ranking
+*/
+.ranking-actions {
+	background-color: #333; color: #fff;
+	text-align: left;
+	//position: absolute; z-index: 2; top: 0; left: 0; right: 0;
+	//width: 100%;
+	overflow: hideen;
+	@include height(35); line-height: 35px;
+	vertical-align: middle;
+	border: 0;
+	padding: 0 $gutterwidth;
+}
+.starsRating-container {
+	@include box-inline;
+	vertical-align: middle;
+	a {
+		background: transparent; padding: 0;
+	}
+}
+.ratingStar {
+    width:22px;
+    height:22px;
+    padding: 0;
+    font-size: 0pt;
+    margin: 0;
+    display: block;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+.filledRatingStar {
+    background-image: url("img/FilledStar.png");
+}
+.emptyRatingStar {
+    background-image: url("img/EmptyStar.png");
+}
+.savedRatingStar {
+    background-image: url("img/FilledStar.png");
+}
+}//fine rating-mode

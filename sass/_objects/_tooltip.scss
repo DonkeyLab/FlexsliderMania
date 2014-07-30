@@ -1,0 +1,42 @@
+@if $tooltip-mode == true{
+/*
+	=tooltip
+*/
+.i-help {
+	background: url(img/sprites.png) no-repeat 0 -511px;
+	@include box-inline;
+	width: 20px; height: 20px;
+	margin: 0;
+}
+.tooltip {
+	@include pos(relative,10000);
+	@include box-inline;
+}
+.tooltip-content-container {
+	text-align: center;
+	width: 200px;
+	display: block;
+	@include pos(absolute,10001);
+	bottom: 100%;
+	left: -9999em;
+	margin: 0 0 0 -102px; padding: 0 0 5px;
+}
+.tooltip .active {
+	left: 50%;
+}
+.tooltip-content {
+	background: url(img/tooltip/bk_nero.png);
+	color: #fff;
+	@extend .f11;
+	text-align: left;
+	display: block;
+	padding: 10px;
+}
+.tooltip-arrow {
+	background: url(img/tooltip/arrow.png) no-repeat 50% 50%;
+	display: block;
+	width: 11px;
+	height: 10px; line-height: 10px;
+	margin: 0 auto;
+}
+}//fine tooltip-mode

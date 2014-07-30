@@ -1,0 +1,26 @@
+/* 
+	=links
+*/
+//
+a {
+	color: $linkcolor;
+/*
+	&:visited {//firefox non visualizza stato di visited
+		color: $linkcolorvisited;
+	}
+*/
+	&:hover,
+	&:focus {
+		color: $linkcolorhover;
+		text-decoration: underline;
+	}
+	&:active {
+		color: $linkcoloractive;
+		//text-decoration: none;
+	}
+}
+
+a span,
+a strong {
+	cursor: pointer;
+}

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "_partials/_config.scss";
+@import "_partials/_mixins.scss";
+// base
+@import "_base/_reset.scss";
+@import "_base/_main.scss";
+@import "_base/_links.scss";
+@import "_base/_images.scss";
+@import "_base/_lists.scss";
+
+// objects 
+@import "_objects/_carousel.scss";
+

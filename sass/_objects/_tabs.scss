@@ -1,0 +1,37 @@
+@if $tabs-mode == true{
+/*
+	=tabs
+*/
+.l-tabs {
+	margin-bottom: $base-spacing-unit * 2;
+}
+.l-nav-tabs {
+	@include group;
+	margin-bottom: 0;
+	
+	.nav-tabs {
+		//width: 100%;
+		//float: left;
+		clear: both;
+	}
+	a {
+		//background-color: $color-4;
+	}
+	.active {
+		background-color: #fff;
+		font-weight: 700;	
+	}
+}
+.tabs {
+	background-color: #fff;
+	clear: both;
+	margin-bottom: $base-spacing-unit;
+	border: 1px solid $base-border-color;
+	border-width: 1px;
+	
+	.tab-panel {
+		@include group;
+		padding: $base-spacing-unit $gutterwidth;
+	}
+}
+}//fine tabs-mode

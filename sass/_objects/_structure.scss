@@ -1,0 +1,164 @@
+@if $structure-mode == true{
+/*
+	=structure
+*/
+html {
+	overflow-y: scroll;
+}
+body {
+	text-align: center;
+	min-height: 100%;
+	height: auto;
+	padding: 0; margin: 0;
+}
+.site-wrapper {
+	width: 100%;
+	margin: 0; padding: 0;
+
+	> .inner {
+		//width: 96%;
+		//max-width: 960px;
+		margin: 0 auto;
+	}
+}
+.site-masthead-outer {
+	margin-bottom: $base-spacing-unit;
+}
+.site-masthead,
+.site-body {
+	clear: both;
+
+	> .inner {
+		@extend .cf;
+		text-align: left;
+		max-width: $maxwidth;
+		width: 98%;
+		padding: 0 1%;
+		margin: 0 auto;
+		
+	}
+}
+
+.site-footer {
+	clear: both;
+
+	.inner {
+		@extend .cf;
+		text-align: left;
+		max-width: $maxwidth;
+		width: 98%;
+		padding: 0 1%;
+		margin: 0 auto;
+		
+	}
+}
+
+.site-masthead {
+	@include pos(relative, 3);
+	padding-top: $base-spacing-unit / 2;
+}
+.teasers-list-wrp {
+	text-align: center;
+	@include pos(relative, 0);
+	//margin-bottom: ;
+}
+.breadcrumb-wrp {
+	width: 100%;
+}
+.breadcrumb {
+	text-align: left;
+	max-width: $maxwidth;
+	width: 100%;
+	//padding: 0 1%;
+	margin: 0 auto;
+	padding: $base-spacing-unit 0 0;
+}
+.site-body {
+	@include pos(relative, 1);
+	padding-top: $base-spacing-unit;
+
+	.hp-site & {
+		//margin-top: -#{$base-spacing-unit};
+		margin-top: -30px;
+		padding-top: 0;
+	}
+}
+.site-footer {
+	@include pos(relative, 0);
+}
+
+//layout
+.content-panel {
+	width: 100%;
+}
+.content-panel,
+.side-nav,
+.related-panel {
+	margin: 0 0 $base-spacing-unit;
+}
+/* =postel.it */
+/*
+	=l-nav-primary
+*/
+.l-nav {
+	margin: 0 0 $base-spacing-unit;
+}
+.l-nav-main,
+.teasers-list-wrp .teasers-list--hmp {
+	max-width: $maxwidth;
+	margin: 0 auto;
+}
+.teasers-list-wrp {
+	margin-bottom: $base-spacing-unit;
+
+	.content-panel & {
+		margin-bottom: $base-spacing-unit * 2;
+	}
+
+	.hp-site & {
+		margin-bottom: 0;
+		//margin-top: -20px;
+	}
+}
+
+.l-nav-primary,
+.l-nav-main {
+	@extend .cf;
+}
+.l-nav-primary {
+	width: 98%;
+	padding: 0 1%;
+	margin: 0 auto;
+}
+/*.l-nav-main {
+	margin: 0;
+}*/
+.l-sub-footer {
+	@extend .cf;
+}
+/*
+	=oldie
+*/
+.oldie {
+
+	.site-wrapper {
+		width: 100%;
+		min-width: $maxwidth;
+	}
+
+	.site-body,
+	.site-masthead {
+		
+		> .inner {
+		 	width: $maxwidth;
+		}
+	}
+	.site-footer {
+		
+		.inner {
+		 	width: $maxwidth;
+		}
+	}	
+}
+
+}//fine structure-mode

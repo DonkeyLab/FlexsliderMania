@@ -1,0 +1,13 @@
+/*
+	=List
+*/
+ul, ol, dd {
+    padding-left: 2 * $base-spacing-unit;
+    padding-left: (2 * $base-spacing-unit / $base-font-size)*1rem;
+}
+li {
+    > ul,
+    > ol {
+        margin-bottom: 0;
+     }
+}

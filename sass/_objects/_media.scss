@@ -1,0 +1,40 @@
+@if $media-mode == true{
+/*
+    =media
+*/
+.media{
+    display:block;
+    @extend .cf;
+}
+.media-fig {
+    @include float;
+    margin-right: $gutterwidth;
+}
+/**
+ * Reversed image location (right instead of left).
+ */
+.media-fig--rev {
+    @include float(right);
+    margin-left: $gutterwidth;
+}
+
+    .media-img img,
+    .media-img--rev img {
+        display: block;
+    }
+
+.media-txt {
+    overflow: hidden;
+
+    p {
+        margin: $base-spacing-unit / 2 0;
+    }
+    > p {
+        margin-top: 0;
+    }
+}
+.media-txt,
+.media-txt > :last-child {
+    margin-bottom:0;
+}
+}//fine media-mode

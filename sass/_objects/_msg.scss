@@ -1,0 +1,100 @@
+@if $msg-mode == true{
+/*
+	=msg
+*/
+.msg {
+	@include clearfix;
+	margin: 0 0 $base-spacing-unit;
+
+	h2, h3, h4, h5, h6, p, ol, ul {
+		margin: 0;
+		padding: 0;
+	}
+	ul, ol {
+		list-style-type: none;
+		
+		li {
+			margin: 0;
+		}
+	}
+}
+.msg {
+	background-repeat: no-repeat;
+	background-position: $gutterwidth $base-spacing-unit / 2;
+	margin: 0 0 $base-spacing-unit;
+	padding: $base-spacing-unit / 2 $gutterwidth $base-spacing-unit / 2 $gutterwidth * 3; 
+	border: 1px dashed $base-border-color;
+	border-width: 1px;
+}
+/*
+	=note/info
+*/
+.msg-note {
+	background-image: url(img/info.png)
+}
+/*
+	=error
+*/
+.msg-error {
+	background-image: url(img/error.png);
+	color: #e75656;
+	border-color: #e75656;
+	
+	label {
+		margin-top: 0; margin-bottom: 0;
+	}
+}
+/*
+	=success
+*/
+.msg-success {
+	background-image: url(img/success.png);
+	border-color: #3a9517;
+
+	strong {
+		color: #3a9517;
+		font-weight: bold;
+	}
+}
+
+/*
+	=alert
+*/
+.msg-alert {
+	background-image: url(img/alert.png);
+	border-color: #f3bd00;
+
+	strong {
+		//color: #3a9517;
+		font-weight: bold;
+	}
+}
+//field-group
+.error label {
+	color: #e75656;
+	font-weight: bold;
+}
+label .error, .error,
+input.error[type="checkbox"] + label,
+input.error[type="radio"] + label,
+label.error {
+	color: #e75656;
+	font-weight: bold;
+}
+.error input,
+.error select,
+.error textarea,
+input.error,
+select.error,
+textarea.error {
+	border-color: #e75656;
+}
+.text-input,
+select,
+textarea {
+	& + .error {
+		display: block;
+	}
+}
+
+}//fine msg-mode

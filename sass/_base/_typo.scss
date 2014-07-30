@@ -1,0 +1,106 @@
+@if $typo-mode == true{
+/* 
+	=typografy
+*/
+.f10 {
+	@include font-size(10px);
+}
+.f11 {
+	@include font-size(11px);
+}
+.f12 {
+	@include font-size(12px);
+}
+.f13 {
+	@include font-size(13px);
+}
+.f14 {
+	@include font-size(14px);
+}
+.f16 {
+	@include font-size(16px);
+}
+.f18 {
+	@include font-size(18px);
+}
+.f21 {
+	@include font-size(21px);
+}
+.f24 {
+	@include font-size(24px);
+}
+.f27 {
+	@include font-size(27px);
+}
+.f30 {
+	@include font-size(30px);
+}
+.f40 {
+	@include font-size(40px);
+}
+.bold { font-weight: 600; }
+.normal { font-weight: 400; }
+.italic { font-style: italic; }
+.otherfontfamily { font-family: $otherfontfamily; /* Helvetica */}
+.basefontfamily { font-family: $basefontfamily; /* Roboto */}
+.uppercase {
+	//font-family: Trebuchet,"Trebuchet MS",Arial,Verdana,sans-serif;
+	text-transform: uppercase;
+	line-height: 1;
+}
+//h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+
+body {
+	@include vendor(hyphens,none);
+}
+a[href^="mailto"][href^="http"] {
+	@include vendor(hyphens,auto);
+}
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
+table,
+pre {
+	margin-bottom: $base-spacing-unit / 2;
+}
+h1 {
+	@extend .f24;
+}
+h2 {
+	@extend .f18;
+}
+h3 {
+	@extend .f16;
+}
+h4 {
+	@extend .f14;
+	@extend .bold;
+}
+h4, h5, h6 {
+	margin-bottom: $base-spacing-unit / 2;
+}
+
+p {
+	margin: $base-spacing-unit / 2 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-botttom: 0;
+	}
+}
+li,
+dt,
+dd {
+	margin: $base-spacing-unit / 4 0;
+
+	p {
+		margin-top: 0;
+	}
+}
+th,
+dt {
+	@extend .bold;
+}
+}//fine typo-mode

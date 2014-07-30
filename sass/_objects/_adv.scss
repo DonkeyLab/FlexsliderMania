@@ -1,0 +1,27 @@
+@if $adv-mode == true{
+/*
+	=adv
+*/
+.adv {
+	text-align: center;
+	clear: both;
+	margin: 0 0 $base-spacing-unit;
+	img {
+		margin: 0 auto;
+	}
+}
+a.adv-content {
+	display: block;
+	width: 100%; height: 100%;
+}
+.adv-title {
+	@include hide-text;
+}
+.adv-block {
+	text-align: center;
+	
+	.lst-adv {
+		margin: 0 auto; padding: 0;
+	}
+}
+}//fine adv-mode

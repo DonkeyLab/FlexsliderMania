@@ -1,0 +1,460 @@
+@if $form-mode == true{
+/*
+	=form-blocks
+*/
+/* =field-label */
+label,
+.label,
+.label-opt {
+	font-weight: 700;
+
+	em {
+		color: $textcolor;
+		@include font-size(12px);
+		font-weight: 400;
+		//font-style: normal;
+	}
+}
+
+/* =required */
+.required em {
+	//color: #DC1928;
+	//@include hide-text;
+}
+.label-note {
+	color: darken($labeltextcolor, 10);
+	@include font-size(12px);
+	font-weight: 400;
+}
+/*
+	<p class="required-legend">
+        <span class="symbol-req">*</span> Required information
+    </p>
+*/
+/* =field-content */
+.text-input,
+textarea,
+select {
+	background-color: #fff;
+	margin-bottom: $base-spacing-unit / 4;
+	border: 0;
+	border: 1px solid #d7d7d7;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1)
+}
+.text-input:hover,
+textarea:hover {
+	border: 0;
+	border: 1px solid #a0a0a0;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1)
+}
+.text-input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border: 1px solid #4d90fe;
+	-webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1)
+}
+
+/*
+	=opt
+*/
+.opt {//p non ha il margine del singolo elemento
+	padding-bottom: $base-spacing-unit / 4;
+	padding-left: 0;
+	margin: 0;
+}
+.opt {
+	display: block;
+	overflow: hidden;
+
+	label {
+		float: none;
+		display: block;
+		padding: 0;
+		margin: 0 0 0 $gutterwidth * 2;
+	}
+}
+.opt--rgh {
+
+	input {
+		@include float(right)
+	}
+	label {
+		margin-left: 0; margin-right: $gutterwidth * 2;
+	}
+
+	li {
+		text-align: right;
+		margin-left: $gutterwidth; margin-right: 0;
+	}
+}
+ol,
+ul {
+	
+	&.opt {
+		margin-bottom: -#{$base-spacing-unit / 2};
+
+		li {
+			list-style-position: outside;
+			display: block;
+			overflow: hidden;
+			vertical-align: middle;
+			padding: 0 0 $base-spacing-unit / 2; margin: 0;
+		}
+	}
+	&.opt--hrz {
+		@extend .cf; //forse è meglio
+		@include group;//da verfificare
+
+		li {
+			@include float;
+			vertical-align: top;
+			margin-right: $gutterwidth;
+		}
+	}
+}
+
+/* =btn */
+.btn {
+	background-color: $btn-color; color: $btn-text-color;
+
+	text-align: center;
+	@extend .f12;
+	@extend .uppercase;
+
+	font-weight: 700;
+	white-space: nowrap;
+	text-decoration: none;
+	vertical-align: top;
+	cursor: pointer;
+	@include box-inline;
+	padding: $base-spacing-unit / 4 $gutterwidth / 1.5;
+	margin: 0 0 $half-spacing-unit;
+	border: 0;
+
+	&:first-child {
+		*margin-left: 0;
+	}
+	&:hover {
+	  text-decoration: none;
+	  /*Buttons in IE7 don't get borders, so darken on hover*/
+		-webkit-transition: background 0.8s linear;
+	     -moz-transition: background 0.8s linear;
+	      -ms-transition: background 0.8s linear;
+	       -o-transition: background 0.8s linear;
+	          transition: background 0.8s linear;
+
+	}
+	&:focus {
+	  outline: thin dotted #333;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}
+	&:hover,
+	&:active,
+	&.active,
+	&.disabled,
+	&[disabled="disabled"] {
+		background: $linkcolorhover;
+	}
+	&.disabled,
+	&[disabled="disabled"] {
+	}
+}
+.btn-primary {
+	@extend .f16;
+	//@extend .uppercase;
+	//font-weight: 400;
+	padding: $base-spacing-unit / 2 $gutterwidth;
+}
+.btn-primary + .btn-secondary { margin-left: $gutterwidth }
+.pull-right .btn,
+.lst-item-actions .btn { margin-left: $gutterwidth; }
+.pull-left .btn { margin-right:  $gutterwidth; }
+.btn-txt--small {
+	@include font-size(12px);
+	line-height: 20px;
+	padding: 0 $gutterwidth / 2;
+	//@extend .bold;
+	//@extend .uppercase;	
+}
+
+/* =form-inline */
+.form-inline {
+	vertical-align: top;
+
+	.lst-fields {
+		display: inline;
+	}
+}
+
+/* =form-block */
+
+.fld-title {
+	background-color: #EDF1F7;
+	@include font-size(13px);
+	font-weight: 600;
+	margin: $base-spacing-unit 0; //$base-spacing-unit -#{$gutterwidth * 2}
+	padding: $base-spacing-unit / 2 $gutterwidth;
+}
+.form-block {
+	margin: 0 0 $base-spacing-unit;
+
+	legend {
+		width: 100%;
+		display: block;
+		margin: $base-spacing-unit 0;
+		padding: 0;
+		
+		span {
+			background-color: #EDF1F7;
+			//@include font-size(12px);
+			font-weight: 600;
+			display: block;
+			margin: 0;
+			padding: $base-spacing-unit / 2 $gutterwidth;
+		}
+	}
+}
+.legend {
+	background-color: $bodycolor; color: #fff;
+
+	@include font-size(13px, false);
+	//line-height: 1;
+	//text-transform: uppercase;
+	font-weight: 700; //font-style: italic;
+	@include box-inline;
+	padding: $base-spacing-unit / 2 $gutterwidth;
+	margin: 0 0 $base-spacing-unit;
+}
+/*
+	=fields
+*/
+.form-title {
+	@include font-size(16px);
+	margin-bottom: $base-spacing-unit;
+}
+.lst-fields {
+	list-style-type: none;
+	//margin-left: 0; margin-bottom: 0;
+	padding: 0;
+}
+/* =field-grop */
+//.field-group,
+//.field-opt-group,
+.fields-group {
+	@extend .cf;
+}
+.fields-group,
+.field-group,
+.fields-opt-group {
+	margin-top: 0;
+}
+.field-group {
+	//@extend .cf;
+
+	list-style-type: none;
+	margin-left: 0;
+	margin-bottom: $base-spacing-unit;
+
+	.help,
+	.note,
+	.error,
+	.success {
+		@include font-size(12px);
+		margin-bottom: 0;
+	}
+	.note-inl,
+	.help-inl {
+		@include box-inline;
+	}
+}
+.field-label {
+	margin-bottom: $base-spacing-unit / 4;
+}
+/* =field-group--inl */
+.field-group--inl {
+	@include box-inline;
+	max-width: auto;
+	width: auto;
+
+	label,
+	.text-input,
+	select,
+	.field-label,
+	.field-content {
+		@include box-inline;
+	}
+}
+/* =field-group--inl */
+.field-group--hrz {
+	//@extend .cf;
+	overflow: hidden;
+	//width: 98%;
+	//max-width: 20em;
+	
+	.field-label,
+	.field-content {
+		@include float;
+	}
+	.field-label {
+		margin-top: 5px;
+		text-align: right;
+		width: 30%;
+		margin-right: 2%;
+	}
+	.field-content {
+		width: 68%;
+	}
+}
+
+/* =fields-group */
+.fields-group {
+	margin-left: -#{$gutterwidth * 2};
+	margin-right: -#{$gutterwidth * 2};
+	
+	.field-group {
+		width: 98%;
+		max-width: 20em;
+		@include float;
+	}
+	.field-group,
+	.fld-title {
+		margin-left: $gutterwidth * 2;
+	}
+	.field-group--inl {
+		//@include box-inline;
+		max-width: auto;
+		width: auto;
+	}
+	.field-group--full {
+		width: 98%;
+		max-width: 98%;
+		//@include float;
+	}
+}
+
+.address-fields,
+.geo-fields {
+
+	.field-group {
+		@include float;
+		margin-right: $gutterwidth;
+	}
+}
+
+.address-field-group {
+	width: 15em;
+	max-width: 100%;
+
+	.text-input {
+		width: 100%;
+	}
+}
+.num-field-group {
+	max-width: 10em;
+}
+.cap-field-group {
+	max-width: 10em;	
+}
+
+.separetor {
+	display: block;
+	text-align: center;
+	margin: $base-spacing-unit 0;
+	border: 1px solid #BAC7DD;
+	border-width: 1px 0 0;
+
+	i {
+		//background-color: #f5f5f5;
+		background-color: #fff;
+		@include font-size(16px);
+		display: block;
+		width: 35px;
+		margin: -12px auto 12px;
+	}
+}
+/* =privacy */
+.fld-privacy {
+	margin: 0 0 $base-spacing-unit;
+}
+.privacy {
+	margin: 0 0 $base-spacing-unit;
+}
+.privacy-text {
+	@include font-size(12px);
+	padding: $base-spacing-unit $gutterwidth * 2;
+	height: 10em;
+	overflow: auto;
+	border: 1px dashed $base-border-color;
+}
+/* =btnbar */
+.btnbar {
+	@include group;
+	clear: both;
+	margin-bottom: $base-spacing-unit;
+
+	.note-required {
+		@extend .f12;
+		font-style: italic;
+		@include float;
+	}
+	.btn-group,
+	.btn {
+		margin-bottom: 0;
+	}
+	.btn-group {
+		@include float(right);
+	}
+	.pull-left {
+		@include float;
+
+		.btn {
+			margin-left: 0;
+			margin-right: $gutterwidth / 2;
+		}
+	}
+	.btn {
+		margin-left: $gutterwidth / 2;
+	}
+}
+/*
+	=dim
+*/
+.form-block {
+	
+	//width
+	.text-input,
+	textarea {
+		width: 100%;
+	}
+	.text-input {
+		max-width: 20em;
+	}
+	.w-small {
+		max-width: 6em;	
+	}
+	//height
+	.text-input {
+		@include height(35);
+	}
+}
+.date-start-field-group {
+
+	.text-input {
+		max-width: 5em;
+	}
+}
+.date-end-field-group {
+
+	.text-input {
+		max-width: 5em;
+	}
+}
+}//fine form-mode

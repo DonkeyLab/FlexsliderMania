@@ -1,0 +1,285 @@
+
+// @include font-size
+
+@mixin font-size($font-size, $line-height:true){
+    font-size:$font-size;
+    font-size:($font-size / $base-font-size)*1rem;
+    @if $line-height == true{
+        line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+    }
+}
+
+// @include smallcaps
+
+@mixin smallcaps($color, $font-weight) {
+	font-variant : small-caps;
+	font-weight : $font-weight;
+	text-transform : lowercase;
+	color : $color;
+}
+
+// @include heading(MARGIN, FONT SIZE, LINE HEIGHT)
+
+@mixin heading($margin : 1, $font-size : 1, $line-height : "")  {
+	margin-bottom : $baselineheight / $margin;
+	@include font-size($basefontsize * $font-size);
+	@if $line-height != "" { line-height: $line-height }
+}
+
+// @include headings
+@mixin headings($from: 1, $to: 6) {
+    %base-heading {
+        @content;
+    }
+    @if $from >= 1 and $to <= 6{
+        @for $i from $from through $to{
+            h#{$i}{
+                @extend %base-heading;
+            }
+        }
+    }
+}
+
+// @include truncate
+
+@mixin truncate($truncation-boundary){
+    max-width:$truncation-boundary;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+// @include group
+
+@mixin group {
+	overflow: hidden;
+}
+
+// @include clearfix
+
+@mixin clearfix {
+	*zoom : 1;
+	&:before,
+	&:after {
+	display: table;
+	content : ""; }
+	&:after {
+	clear : both; }
+}
+
+// @include box-inline
+
+@mixin box-inline {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+// @include hidden
+
+@mixin hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// @include hide-text
+
+@mixin hide-text {
+	text-indent: -9999em;
+	white-space: nowrap;
+	overflow: hidden;
+	position: absolute;
+}
+
+// @include invisible
+
+@mixin invisible {
+	visibility: hidden;
+}
+
+@mixin visuallyhidden {
+	overflow : hidden;
+	position : absolute;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	&.focusable {
+		&:active,
+		&:focus {
+		position : static;
+		clip : auto;
+		height : auto;
+		width : auto;
+		margin : 0;
+		overflow: visible; } 
+	}
+}
+
+// @include vendor
+
+@mixin vendor($property,$value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+// @include box-shadow
+
+@mixin box-shadow($shadows){
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+// @include text-shadow
+
+@mixin text-shadow($shadows){
+  -moz-text-shadow: $shadows;
+  -webkit-text-shadow: $shadows;
+  text-shadow: $shadows;
+}
+
+// @include drop-shadow
+
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+	-webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	-moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+	box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
+// @include border-radius
+
+@mixin border-radius($borderradius){
+  -moz-border-radius: $borderradius;
+  -webkit-border-radius: $borderradius;
+  border-radius: $borderradius;
+}
+
+// @include horizontal-shadow
+
+@mixin horizontal($startColor : $white, $endColor : $lighterneutralcolor) {
+background-color: $endColor;
+background-image  : -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(left, $startColor, $endColor);   				 // Safari 5.1+, Chrome 10+
+background-image  : -moz-linear-gradient(left, $startColor, $endColor); 					 // FF 3.6+
+background-image  : -ms-linear-gradient(left, $startColor, $endColor); 						 // IE10
+background-image  : -o-linear-gradient(left, $startColor, $endColor); 						 // Opera 11.10
+background-image  : linear-gradient(left, $startColor, $endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+// @include vertical-shadow
+
+@mixin vertical($startColor : $white, $endColor:  $lighterneutralcolor) {
+background-image  : -webkit-gradient(linear, 0 0, 0 100%, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(top, $startColor, $endColor); 					 // Safari 5.1+, Chrome 10+
+background-color  : $endColor;
+background-image  : -moz-linear-gradient(top, $startColor, $endColor);   					 // FF 3.6+
+background-image  : -ms-linear-gradient(top, $startColor, $endColor); 						 // IE10
+background-image  : -o-linear-gradient(top, $startColor, $endColor); 						 // Opera 11.10
+background-image  : linear-gradient(top, $startColor, $endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+// @include directional-shadow
+
+@mixin directional($startColor : $white, $endColor : $lighterneutralcolor, $deg : 45deg) {
+background-color  : $endColor;
+background-image  : -moz-linear-gradient($deg, $startColor, $endColor); 					// FF 3.6+
+background-image  : -ms-linear-gradient($deg, $startColor, $endColor); 						// IE10
+background-image  : -webkit-linear-gradient($deg, $startColor, $endColor); 					// Safari 5.1+, Chrome 10+
+background-image  : -o-linear-gradient($deg, $startColor, $endColor); 						// Opera 11.10
+background-image  : linear-gradient($deg, $startColor, $endColor); 							// W3C
+background-repeat : repeat-x; }
+
+// @include text-overflow
+
+@mixin text-overflow {
+	overflow : hidden;
+	text-overflow : ellipsis;
+	white-space : nowrap;
+}
+
+// @include zero
+
+@mixin zero {
+	margin: 0; padding: 0;
+}
+
+// @include float(FLOAT, CLEAR(both,left,right))
+
+@mixin float($float: left, $clear: "")  {
+	float: $float;
+	display: inline;
+	@if $clear != "" { clear: $clear; }
+}
+
+// @include pos(POSITION,Z-INDEX)
+
+@mixin pos($position: relative, $z-index: 1){
+	position: $position;
+	z-index: $z-index;
+}
+
+// @include width-fluid
+
+@mixin width-fluid($target, $context){
+	width: ($target / $context) * 100%;
+}
+
+// @include margin-fluid
+@mixin margin-fluid ($target, $context, $direction: "left") {
+	@if $direction != "left" { margin-#{$direction}: ($target / $context) * 100% }
+	@if $direction == "left" { margin-left: ($target / $context) * 100% }
+}
+
+// @include padding-fluid
+
+@mixin padding-fluid ($target, $context, $direction: "left") {
+	@if $direction != "left" { padding-#{$direction}: ($target / $context) * 100%; }
+	@if $direction == "left" { padding-left: ($target / $context) * 100%; }
+}
+
+// @include height
+
+@mixin height($height){
+	min-height: #{$height}px; height: auto !important; height: #{$height}px;
+}
+
+// @include mq
+
+@mixin mq($canvas) {
+	@if $canvas == $XS {
+		@media only screen and (min-width: $XS) {
+			@content;
+		}
+	}
+	@else if $canvas == $S {
+		@media only screen and (min-width: $S) {
+			@content;
+		}
+	}
+	@else if $canvas == $M {
+		@media only screen and (min-width: $M) {
+			@content;
+		}
+	}
+	@else if $canvas == $L {
+		@media only screen and (min-width: $L) {
+			@content;
+		}
+	}
+	@else if $canvas == $XL {
+		@media only screen and (min-width: $XL) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (min-width: $canvas) {
+			@content;
+		}
+	}
+}

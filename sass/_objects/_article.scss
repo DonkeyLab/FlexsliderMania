@@ -1,0 +1,175 @@
+@if $article-mode == true{
+/*
+	=doc
+*/
+
+.alignleft {
+	text-align: left;
+	@include float;
+	clear: left;
+	margin: 0 $gutterwidth 0 0;
+}
+.alignright {
+	text-align: right;
+	@include float(right);
+	clear: right;
+	margin: 0 0 0 $gutterwidth;
+}
+.aligncenter {
+	text-align: center;
+	display: block;
+	clear: both;
+	margin: 0 auto $base-spacing-unit;
+}
+.alignleft,
+.alignright,
+.aligncenter {
+
+	img {
+		display: block; margin: 0 auto; 
+	}
+}
+
+.doc {
+	@include clearfix;
+	margin-bottom: $base-spacing-unit;
+}
+.sec-hd,
+.doc-hd {
+
+	hgroup {
+		margin-bottom: 0;
+
+		h1, h2 {
+			margin-bottom: 0;
+		}
+	}
+}
+.sec-fig {
+	margin-bottom: 0;
+}
+.doc-hd,
+.sec-hd {
+	@include headings(1,3) {
+		margin-bottom: 0;
+	}
+}
+.doc-hd {
+	@include clearfix;
+}
+.doc-bd,
+.sec-overview {
+	padding: 0 0 $base-spacing-unit;
+}
+.doc-bd .e-content {
+
+	p, li, td, th,
+	dd, dt {
+		@include font-size(15px,false);
+		line-height: 1.5;
+	}
+
+	blockquote {
+		border-left: $gutterwidth solid $base-border-color;
+		padding-left: $gutterwidth;
+	}
+	a {
+		@extend .bold;
+		text-decoration: underline;
+	}
+	/*@include headings(1,3) {
+		margin-bottom: 0;
+	}*/
+	/*ul {
+		list-style: none;
+		padding-left: 0;
+
+		li {
+			background: url(img/icon_lst.png) no-repeat 0 7px;
+			list-style: none;
+			padding-left: 20px;
+		}
+	}*/
+	table {
+		clear: both;
+	}
+}
+.doc-fig {
+	margin-bottom: $base-spacing-unit;
+
+	.fig {
+		text-align: center;
+		width: 100%;
+	}
+	.fig-caption {
+		background-color: #999; color: #fff;
+		text-align: left;
+		margin: 0;
+		padding: 5px;
+	}
+}
+
+
+.e-content {
+/*
+	table {
+		border-collapse: separate;
+		border-spacing: inherit;
+	}
+	td, tr {
+		padding: auto;
+		margin: auto;
+		border: auto;
+	}
+	.table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	.scrollable {
+		clear: both;
+	}	
+	*/
+}
+.scrollable {
+
+	&.has-scroll {
+		position: relative;
+		overflow: hidden; /* Clips the shadow created with the pseudo-element in the next rule. Not necessary for the actual scrolling. */
+		margin-bottom: 20px;
+		table {
+			margin-bottom: 0;
+		}
+
+	}
+	&.has-scroll:after {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		width: 50px;
+		height: 100%;
+		border-radius: 10px 0 0 10px / 50% 0 0 50%;
+		box-shadow: -5px 0 10px rgba(0, 0, 0, 0.25);
+		content: '';
+	}
+
+	/* This is the element whose content will be scrolled if necessary */
+	&.has-scroll > div {
+		overflow-x:auto;
+	}
+
+	/* Style the scrollbar to make it visible in iOS, Android and OS X WebKit browsers (where user preferences can make scrollbars invisible until you actually scroll) */
+	> div::-webkit-scrollbar {
+		height:12px;
+	}
+	> div::-webkit-scrollbar-track {
+		box-shadow:0 0 2px rgba(0,0,0,0.15) inset;
+		background:#f0f0f0;
+	}
+	> div::-webkit-scrollbar-thumb {
+		border-radius:6px;
+		background:#ccc;
+	}
+}
+
+}//fine article-mode

@@ -1,0 +1,17 @@
+// img
+img {
+	max-width: 100%;
+	height: auto;
+	//width: auto;
+	border-width: 0;
+	vertical-align: middle;
+}
+
+// figure
+figure {
+	margin: 0 0 $base-line-height;
+
+	img {
+		margin: 0;
+	}
+}

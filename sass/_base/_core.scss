@@ -1,0 +1,61 @@
+/*
+	=core
+*/
+.lf { @include float; }
+.rf { @include float(right); }
+.cf { clear: both; margin: 0 }
+.l-img { display: block; float: left; clear: left; margin: 0 $gutterwidth 0 0 }
+.r-img { display: block; float: right; clear: right; margin: 0 0 0 $gutterwidth  }
+.c-img { display: block; width: auto; clear: both; margin: 0 auto $base-spacing-unit }
+.l-img, .r-img, .c-img {
+	text-align: center;
+	img {
+		display: block; margin: 0 auto; 
+	}
+}
+.nowrap { white-space: nowrap; }
+.t-right { text-align: right; }
+.t-left { text-align: left; }
+.t-justify { text-align: justify; }
+.t-center { text-align: center; }
+.clear { clear: both; }
+.c-left { clear: left; }
+.c-right { clear: right; }
+.nomrg { margin: 0 }
+.break { display: block; }
+.pull-left { @include float; }
+.pull-right { @include float(right); }
+.nowrap { white-space: nowrap; }
+.inl { width: auto; }
+.amp { font-family : "Hoefler Text"; font-style : italic; font-weight : normal; }
+.structural,
+.visuallyhidden,
+.hidden,
+.print-only {
+	@include visuallyhidden;
+}
+.inl {
+	@include box-inline;
+}
+/* =media */
+.media {
+    margin-bottom:$base-spacing-unit;
+    //margin-bottom:($base-spacing-unit / $base-font-size)*1rem;
+    .islet & {
+        margin-bottom:$base-spacing-unit / 2;
+        //margin-bottom:(($base-spacing-unit / $base-font-size) / 2)*1rem;
+    }
+}
+/* =clearfix */
+.cf {
+	@include clearfix;
+}
+/*
+	=icon
+*/
+.icon,
+.i {
+	background-repeat: no-repeat;
+	@include box-inline;
+	vertical-align: middle;
+}

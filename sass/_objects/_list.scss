@@ -1,0 +1,124 @@
+@if $list-mode == true{
+/* 
+	=list
+*/
+.lst {
+ 	list-style-type: none;
+ 	padding: 0; margin-left: 0;
+ 	
+ 	li {
+ 		//display: block;
+ 		list-style-type: none;
+ 		//margin-left: 0;
+ 		//padding: 0;   
+ 	}
+}
+.lst-disc {
+	margin-left: $gutterwidth * 2;
+	
+	li {
+		list-style-type: disc;
+	}
+}
+.lst-title {
+	clear: both;
+	padding: $base-spacing-unit / 2 0;
+	margin: 0;
+}
+.lst--inline {
+	li {
+		@include box-inline;
+		margin-right: $gutterwidth;
+	}
+}
+.mod .lst {
+	margin-bottom: 0;
+}
+/* =item */
+.item {}
+.lst--grid {
+	clear: both;
+	margin: 0 0 0 -1.315789473684211%;
+
+	ul {
+		margin: 0; padding: 0;
+	}
+	.item {
+		@include float;
+		margin: 0 1.315789473684211% $base-spacing-unit / 2; // 20 / 760 
+		padding: 0;
+
+	}
+}
+
+/* =lst--inline */
+.lst--inline {
+	//width: 102.631578947368421%;
+	margin: 0 0 0 -1.315789473684211%;
+	clear: both;
+	font-size: 0; // necessario per una migliore gestione degli spazi
+	ul {
+		margin: 0; padding: 0;
+	}
+	.item {
+		display: inline-block;
+		margin: 0 1.315789473684211% $base-spacing-unit / 2; // 20 / 760 
+		padding: 0;
+		vertical-align: top;
+		*zoom: 1;
+		*display: inline;
+	}
+}
+.c-lst {
+
+	.item {
+		margin: 0;
+	}
+}
+
+/* =faq-list */
+.faq-list {
+	margin: 0 0 $base-spacing-unit;
+
+	.list-title {
+		margin-bottom: $base-spacing-unit;
+	}
+}
+.lst-faq {
+
+	dt {
+		margin: $base-spacing-unit / 2 0;
+		padding: 0 0 $base-spacing-unit / 2 0;
+		border: 1px dotted $base-border-color;
+		border-width: 0 0 1px;
+	}
+	dd {
+		padding: 0 0 0 $gutterwidth;
+		margin: 0;
+		border: 1px solid $base-border-color;
+		border-width: 0 0 0 3px;
+
+		p {
+			margin: 0;
+		}
+	}/*
+	.accordion-hd:after {
+		color: $linkcolor;
+		@include font-size(22px,false);
+		line-height: 1;
+		text-align: center;
+		font-weight: 700;
+		content: "+";
+		display: block;
+		@include pos(absolute,2);
+		top: 0; right: 0;
+		width: 20px; height: 20px;
+	}
+	.accordion-hd.active:after {
+		content: "-";
+	}*/
+	.accordion-content.active {//dd
+		margin: 0 0 $base-spacing-unit;
+	}
+}
+}//fine list-mode
