@@ -20,7 +20,7 @@ jQuery(window).load(function() {
  
     $.fn.fsm_lazyload = function () {
 
-        var loadingClass = "loading-square-circle-black";
+        var loadingClass = "loading-square-circle";
         var sliderImages = this.find(".slides > li:not(.clone) img");
         $(sliderImages).each(function (index, item) {
             if ($(item).attr("src") == "media/images/placeholder.png" || $(item).attr("src") == "") {
@@ -33,6 +33,7 @@ jQuery(window).load(function() {
                         $(item).unwrap();
                     }
                 }).attr("src", $(item).attr("data-lazy"));
+                return false;
             }
         });            
     }

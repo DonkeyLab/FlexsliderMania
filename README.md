@@ -1,4 +1,4 @@
 FlexsliderMania
 ===============
 
-Custom Flexslider
+Responsive LazyLoad Flexslider
