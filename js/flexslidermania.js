@@ -1,7 +1,6 @@
 jQuery(window).load(function() {
   jQuery('.c-lst-container').flexslider({
-    //selector: ".c-lst > li",
-    animation: "slide",
+    animation: "fade",
     animationLoop: false,
     slideshow: false,
     controlNav: true,
@@ -14,28 +13,41 @@ jQuery(window).load(function() {
     }
   });
 });
+/*
+jQuery(window).load(function() {
+  jQuery('.c-lst-container').flexslider({
+    //selector: ".c-lst > li",
+    animation: "slide",
+    animationLoop: false,
+    slideshow: false,
+    controlNav: true,
+    directionNav: true
+  });
+});*/
 
 
 (function( $ ) {
  
     $.fn.fsm_lazyload = function () {
 
-        var loadingClass = "loading-square-circle";
+        //var loadingClass = "loading-square-circle";
         var sliderImages = this.find(".slides > li:not(.clone) img");
         $(sliderImages).each(function (index, item) {
             if ($(item).attr("src") == "media/images/placeholder.png" || $(item).attr("src") == "") {
-                var container = $("<div class=\"" + loadingClass + "\"></div>");
-                var firstImageHeight = sliderImages.first().height();
-                container.css("height", firstImageHeight.toString() + "px");
-                $(item).wrap(container);
+                //var container = $("<div class=\"" + loadingClass + "\"></div>");
+                //var firstImageHeight = sliderImages.first().height();
+                //container.css("height", firstImageHeight.toString() + "px");
+                //$(item).wrap(container);
                 $(item).on("load", function () {
-                    if ($(item).parent().hasClass(loadingClass)) {
+                    /*if ($(item).parent().hasClass(loadingClass)) {
                         $(item).unwrap();
-                    }
+                    }*/
                 }).attr("src", $(item).attr("data-lazy"));
+                //console.log(firstImageHeight);
                 return false;
+
             }
-        });            
+        });           
     }
     
 
