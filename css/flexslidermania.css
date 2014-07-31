@@ -512,7 +512,4 @@ html[xmlns] .c-lst {
 
 .loading-square-circle {
   background: url(img/loader_sc.gif) no-repeat 50% 50%;
-  min-height: 31px;
-  height: auto !important;
-  height: 31px;
 }
