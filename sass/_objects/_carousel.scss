@@ -1,6 +1,11 @@
 .c {
 	@include pos;
 }
+.is-fade {}
+.is-slide .slides > li {
+  @include pos();
+  display: block;
+}
 
 .c-lst-container {
 	text-align: center;
@@ -65,3 +70,73 @@ html[xmlns] .c-lst {display: block;}
 	height: auto !important;
 	height: 31px;
 }
+
+.c-lst-container {
+
+	.slides {
+		//background: $darkerblu;
+		//@include height(500);
+
+		li {
+			width: $maxwidth;
+
+			img {
+				width: auto;
+				max-height: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.slide-img-container {
+		//background: #000;
+		display: block;
+		width: 100%;
+		@include pos;
+
+		.slide-img-spacer {
+			padding-top: 50%;
+			//padding-top: 62.5%; //650 height * 100
+			display: block;
+			content: '';
+		}
+		.slide-img {
+			text-align: center;
+			@include pos(absolute,20);
+			top: 0; bottom: 0; right: 0; left: 0;
+			overflow: hidden;
+
+			img {
+				display: block;
+				width: auto;
+				max-width: 100%;
+				max-height: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	/*.flex-direction-nav {
+		@include pos(absolute,500);
+		top: 0; left: 0; right: 0;
+		width: 100%;
+		padding-top: 50%;
+
+		a {
+			background: url(img/centered_btns.gif) no-repeat 0 0;
+			@include opacity(70 / 100);
+			margin-top: 0;
+			top: 0;
+			height: 100%;
+			width: 49%;
+		}
+		.flex-prev {
+			background-position: 0 50%;
+		}
+		.flex-next {
+			width: 51%;
+			background-position: 100% 50%;
+		}
+	}*/
+}
+	
