@@ -573,7 +573,7 @@ html[xmlns] .c-lst {
   display: block;
   content: '';
 }
-/* line 103, ../sass/_objects/_carousel.scss */
+/* line 104, ../sass/_objects/_carousel.scss */
 .c-lst-container .slide-img-container .slide-img {
   text-align: center;
   position: absolute;
@@ -584,7 +584,7 @@ html[xmlns] .c-lst {
   left: 0;
   overflow: hidden;
 }
-/* line 109, ../sass/_objects/_carousel.scss */
+/* line 110, ../sass/_objects/_carousel.scss */
 .c-lst-container .slide-img-container .slide-img img {
   display: block;
   width: auto;
